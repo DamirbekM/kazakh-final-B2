@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Глоссарий неологизмов (қазақ тілі)</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="container header">
+        <div>
+            <h1 data-i18n="title">Глоссарий неологизмов</h1>
+            <p class="muted" data-i18n="subtitle">
+                Казахский язык — примеры, значения, теги, поиск
+            </p>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+            <select id="langSelect" class="langSelect">
+                <option value="ru">RU</option>
+                <option value="kz">KZ</option>
+            </select>
+            <div class="stats" id="stats"></div>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <section class="panel">
+            <div class="controls">
+                <label class="field">
+                    <span class="label" data-i18n="search">Поиск</span>
+                    <input id="q" type="search" placeholder="Напр.: вайб, сторис, лайк..." autocomplete="off" />
+                </label>
+
+                <label class="field">
+                    <span class="label" data-i18n="tag ">Тег</span>
+                    <select id="tag">
+                        <option value="">Все</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span class="label" data-i18n="sort">Сортировка</span>
+                    <select id="sort">
+                        <option value="az">A → Z</option>
+                        <option value="za">Z → A</option>
+                        <option value="new">Сначала новые</option>
+                    </select>
+                </label>
+
+                <button class="btn" id="reset" data-i18n="reset">Сброс</button>
+            </div>
+        </section>
+
+        <section class="grid" id="list" aria-live="polite"></section>
+
+        <section class="panel">
+            <h2 class="h2" data-i18n="addTerm">Добавить термин</h2>
+            <p class="muted">Сохранится в этом браузере (localStorage).</p>
+
+            <form id="form" class="form">
+                <label class="field">
+                    <span class="label" data-i18n="term">Термин</span>
+                    <input id="term" required placeholder="Напр.: вайб" />
+                </label>
+
+                <label class="field">
+                    <span class="label" data-i18n="meaning">Перевод / значение (RU)</span>
+                    <input id="meaning" required placeholder="Короткое объяснение" />
+                </label>
+
+                <label class="field">
+                    <span class="label" data-i18n="example">Пример (KZ)</span>
+                    <input id="example" placeholder="Напр.: Бүгін вайб жақсы екен." />
+                </label>
+
+                <label class="field">
+                    <span class="label">Происхождение</span>
+                    <select id="origin">
+                        <option value="англицизм">англицизм</option>
+                        <option value="русизм">русизм</option>
+                        <option value="интернет-сленг">интернет-сленг</option>
+                        <option value="аббревиатура">аббревиатура</option>
+                        <option value="другое" data-i18n="other">другое</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span class="label" data-i18n="tags">Теги (через запятую)</span>
+                    <input id="tags" placeholder="соцсети, молодежь, разговорное" />
+                </label>
+
+                <button class="btn primary" type="submit" data-i18n="add">Добавить</button>
+            </form>
+        </section>
+
+        <footer class="footer muted">
+            Сделано на чистом HTML/CSS/JS • Можно расширить: импорт/экспорт JSON, модерация, алфавитный указатель
+        </footer>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+:root {
+    --bg: #0b1220;
+    --card: rgba(255, 255, 255, 0.06);
+    --card2: rgba(255, 255, 255, 0.09);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.68);
+    --border: rgba(255, 255, 255, 0.12);
+    --primary: #58d3a4;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(88, 211, 164, 0.18), transparent 55%),
+        radial-gradient(900px 500px at 90% 15%, rgba(96, 165, 250, 0.18), transparent 60%),
+        var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: min(1060px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 26px 0 12px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 34px);
+    letter-spacing: 0.2px;
+}
+
+.h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.muted {
+    color: var(--muted);
+    margin: 6px 0 0;
+}
+
+.stats {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.panel {
+    margin: 14px 0;
+    padding: 14px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--card), transparent);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+input,
+select {
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--text);
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: rgba(88, 211, 164, 0.55);
+    box-shadow: 0 0 0 4px rgba(88, 211, 164, 0.14);
+}
+
+.btn {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--card2);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.08);
+}
+
+.btn.primary {
+    border-color: rgba(88, 211, 164, 0.38);
+    background: rgba(88, 211, 164, 0.18);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+
+.card {
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.term {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.badge {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.18);
+    padding: 6px 10px;
+    border-radius: 999px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.example {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form .btn {
+    grid-column: 1 / -1;
+}
+
+.footer {
+    padding: 18px 0 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.langSelect {
+    height: 38px;
+    border-radius: 12px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--text);
+}
+
+
+@media (max-width: 920px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
